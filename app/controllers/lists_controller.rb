@@ -8,7 +8,7 @@ class ListsController < ApplicationController
     
     list.save
     
-    redirect_to'/top'
+    redirect_to list_path(list.id)
   end
 
   def index
@@ -18,6 +18,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @list=List.find(params[:id])
   end
 
   def edit
